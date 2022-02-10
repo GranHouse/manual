@@ -1,0 +1,781 @@
+@charset "utf-8";
+/*
+Theme Name: SaToBlog
+Description: SaToBlog 
+Version: 1.0 20211208
+Author: SaTo
+Author URI: http://satodiary.com/
+*/
+
+@import url("css/sanitize.css");
+
+@import url("https://fonts.googleapis.com/css2？family = M + PLUS + 1p:wght @ 100; 400＆ display = swap");
+
+/*------------------------------------------------------------Header Start-------------------------------------------------------------------*/
+
+#navi input {
+ display: none;
+}
+
+.companylogo img{
+  height: 50px;
+  margin: 10%
+}
+
+body{
+    margin: 0;
+    background-color: rgb(#fff);
+    min-height: 100vh;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;   
+    width: 100%; 
+  
+}
+
+
+.title{
+    height: 110px;
+}
+
+.header_top .header_title a img{
+  width:300px; 
+  height:85px;
+  margin-top:10%;
+}
+
+.header-logo-menu{
+  display: none;
+}
+
+.header_top {
+    background-color: rgb(236, 236, 236);
+    height: 230px;
+    text-align: center;
+    margin: 0;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header_title{
+    color: rgb(74, 74, 74);
+    display: inline-block;
+    font-size: 80px;
+    font-weight: bolder;
+    margin: 10px;
+    line-height: 100px;
+}
+
+
+
+/*ヘッダータイトル　終わり*/
+.child_menu_list{
+  text-decoration: none; /*リスト下線消す*/
+  color: rgb(74, 74, 74); /*文字色変更*/
+  font-weight: bold; /*文字の太さ変更*/
+}
+
+.global_menu { /* メニュー全体のスタイル */
+  width: 95%;
+    position: relative;
+    color: rgb(74, 74, 74);
+    background: rgb(236, 236, 236);
+    text-align: center;
+    position: absolute;
+    top: 170px;
+    height: 59px;
+    margin-left: 2.5%;
+}
+ 
+.global_menu li {
+  display: inline-block;
+}
+ 
+.global_menu a { /* 各項目のスタイル */
+  display: block;
+  padding: 10px 30px;
+}
+ 
+.menu:hover > a {
+  background: orange;/* ホバー時の背景色 */
+}
+ 
+.child_menu > li > a { /* 子項目のスタイル */
+  font-size: 20px;
+}
+.child_menu > li > a:hover { /* 子項目のスタイル（ホバー時） */
+  background: orange;
+}
+ 
+.child_menu { /* 下層メニューのスタイル */
+  width: 100%;
+  position: absolute;
+  top: 100%; /* 親項目の直下に配置 */
+  left: 0;
+  padding: 5px;
+  background: orange; /* 背景色 */
+  visibility: hidden; /* 下層メニューを非表示 */
+}
+ 
+.menu:hover .child_menu { /* 下層メニューのスタイル（親項目ホバー時） */
+  visibility: visible; /* 下層メニューを表示 */
+}
+ 
+.child_menu a:hover {
+  color: #fff;
+}
+
+
+/*文字が動く*/
+
+a:hover {
+  -webkit-animation: zoom .3s;
+  animation: zoom .3s;
+}
+
+
+
+@-webkit-keyframes zoom {
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes zoom {
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+
+/*　ナビゲーション　ドロップダウンリスト　　ここまで！*/
+
+
+
+
+/*--------------------------------------------------------------Header END-------------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------スマホ用 start------------------------------------------------------------------*/
+
+
+@media screen and (max-width: 1024px) {
+  .news_list_item a {
+      display: block;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .news_list_item a  {
+      font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .arrow {
+      display: none;
+  }
+  .news_list_item a {
+      padding-right: 0;
+  }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 999px) {
+	
+	.header-menu-title p{
+		color:#fff;
+		font-weight:bold;
+		font-size:40px;
+		height:41px;
+		width:300px;
+		margin:0 auto;
+		text-align:center;
+		-webkit-text-stroke: 1px #333;	
+		
+	}
+	
+	.outline{
+		margin-top:3%;
+	}
+	
+	
+  .header_top {  /*ヘッダーメニューが消えた分高さ調節*/
+    display: none;
+  }
+
+  
+
+  .header_title{
+		font-size: 68px;
+	}
+
+  .global_menu {  /*ヘッダーメニューを消す*/
+    display: none;
+  }
+
+ 
+.foot-menu-outline {  /*フッターメニューを消す*/
+  display: none;
+}
+
+.foot-wrap{
+  margin-top: 5%;
+  margin-bottom: 4%;
+}
+
+
+header {
+  padding:7px;
+  background: gray;
+}
+
+#nav-drawer {
+  position: relative;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+/*ハンバーガーの形をCSSで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: #333;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒箇所*/
+#nav-close {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*メニューの中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 90%;
+  max-width: 330px;/*最大幅（お好みで調整を）*/
+  height: 100%;
+  background: #fff;
+  transition: .3s ease-in-out;
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);
+}
+
+/*チェックがついたら表示させる*/
+#nav-input:checked ~ #nav-close {
+  display: block;
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+.header-logo-menu{
+ display: flex;
+ display: -moz-flex;
+ display: -o-flex;
+ display: -webkit-flex;
+ display: -ms-flex;
+ flex-direction: row;
+ -moz-flex-direction: row;
+ -o-flex-direction: row;
+ -webkit-flex-direction: row;
+ -ms-flex-direction: row;
+}
+
+/*ロゴやサイトタイトルをセンタリング*/
+.logo-area{
+  text-align:center;margin:auto;
+}
+
+}
+
+
+/*--------------------------------------------------------------スマホ用 End------------------------------------------------------------------*/
+/*PCの時は表示しない*/
+@media (min-width:999px){
+  .header-menu-pc{
+   display: none;
+ }
+}
+
+
+
+/*リンクの下線を消す*/
+a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+ }
+ 
+
+
+/* 本文をメニューの高さ分下げる */
+#main {
+ margin-top: 60px;
+}
+
+#navi {
+ background-color: orange;
+ position: fixed;
+ top: 0;
+ left: 0;
+ height: 60px;
+ width: 100%;
+ z-index: 99;
+}
+
+
+/* チェックボックスを非表示 */
+#navi input {
+ display: none;
+}
+/* 左上ロゴ */
+.menu-left {
+ float: left;
+ line-height: 60px;
+}
+.menu-left img {
+ vertical-align: middle;
+}
+/* 上部メニュー */
+
+.menu-parent {
+ float: left;
+ margin-right: 30px;
+ line-height: 60px;
+ font-size: 17px;
+ font-weight: bold;
+ white-space: nowrap;
+}
+
+
+
+
+
+@media screen and (max-width: 999px) {
+ /* スマホの際に V を表示 */
+ .menu-parent .pd {
+   display: inline-block;
+   width: 100%;
+ }
+ .menu {
+   display: none;
+ }
+ .menu-parent {
+   height: auto;
+   width: 100%;
+   padding: 0px 20px;
+   border-bottom: 1px solid #333;
+ }
+ .menu-parent:first-child {
+   border-top: 1px solid #333;
+ }
+ .menu-parent i {
+   padding: 0px 6px;
+ }
+ /* メニューを移動させないため */
+ #menu-navibtn:checked ~ #navi {
+   position: fixed;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   height: 100%;
+ }
+}
+
+
+
+/* スマホ用 */
+@media screen and (max-width: 999px) {
+ /* ハンバーガーメニューがクリックされた時 */
+ #menu-navibtn:checked ~ * .menu {
+   display: block;
+   opacity: 1;
+ }
+ #menu-navibtn:checked ~ * .menu-parent {
+   max-height: inherit;
+   overflow-y: visible;
+ }
+ #menu-navibtn:checked ~ * .menu-child {
+   max-height: 0;
+   overflow-y: hidden;
+   visibility: hidden;
+ }
+ /* 子メニュー */
+ .menu-parent .menu-child {
+   position: relative;
+   padding: 0 20px;
+   opacity: 1;
+   top: 0;
+   margin-left: auto;
+   left: auto;
+   width: auto;
+ }
+ .menu-parent > label:hover {
+   cursor: pointer;
+   cursor: hand;
+ }
+ /* 子メニューがクリックされた時 */
+ #navi input[type="checkbox"]:checked ~ .menu-child {
+   max-height: inherit;
+   overflow-y: visible;
+   visibility: visible;
+ }
+ .angletoggle:before {
+   content: "\f107";
+ }
+ #navi input[type="checkbox"]:checked ~ * .angletoggle:before {
+   content: "\f106";
+ }
+}
+/* 子メニュー */
+.menu-child li {
+ font-size: 14px;
+}
+/* 余分な最後の線を消去 */
+.menu-child li:last-child {
+ border: none;
+}
+.menu-child li i {
+ margin-right: 3px;
+}
+
+/* ハンバーガー */
+#navi #navibtn {
+ display: none;
+}
+@media screen and (max-width: 999px) {
+ #navi #navibtn {
+   display: block;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+ }
+ #navibtn span {
+   display: block;
+   width: 40px;
+   height: 40px;
+   background-color: orange;
+ }
+ #navibtn span span {
+   display: block;
+   overflow: hidden;
+   width: 1px;
+   height: 1px;
+ }
+ #navibtn span span::before,
+ #navibtn span span::after,
+ #navibtn span::after {
+   position: absolute;
+   left:10px;
+   content:"";
+   width: 20px;
+   height: 3px;
+   background-color: #333;
+ }
+ /* 上の棒 */
+ #navibtn span span::before {
+   top:10px;
+ }
+ #menu-navibtn:checked ~ #navi label#navibtn span span::before {
+   top:19px;
+   transform: rotate(-45deg);
+   -webkit-transform: rotate(-45deg);
+ }
+ /* 下の棒 */
+ #navibtn span::after {
+   bottom:10px;
+ }
+ #menu-navibtn:checked ~ #navi label#navibtn > span::after {
+   bottom:18px;
+   transform: rotate(-135deg);
+   -webkit-transform: rotate(-135deg);
+ }
+ /* 中の棒 */
+ #navibtn span span::after {
+   top:18px;
+ }
+ #menu-navibtn:checked ~ #navi label#navibtn span span::after {
+   display: none;
+ }
+}
+
+/*------------------------------------------------------------Footer Start-------------------------------------------------------------------*/
+
+
+
+
+.foot-wrap {
+  background-color: orange;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*--------------------------------------------------------------Footer END-------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------main END-------------------------------------------------------------------*/
+.main_content{
+  background-color: rgb(236, 236, 236);
+    margin-top: 3%;
+    margin-bottom: 2%;
+    padding-top: 1%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+}
+
+.big-outline{
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+}
+
+
+
+.main-title{
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+
+
+.outline1{
+  border-radius:10%;
+  margin: 2%;
+  height: 32%;
+  width: 28%;
+  background-color: orange;
+  text-align: center;
+}
+
+.outline2{
+  border-radius:10%;
+  margin: 2%;
+  height: 32%;
+  width: 28%;
+  background-color: rgb(0, 153, 255);
+  text-align: center;
+}
+
+.outline3{
+  border-radius:10%;
+  margin: 2%;
+  height: 32%;
+  width: 28%;
+  background-color: green;
+  text-align: center;
+}
+
+.outline4{
+  border-radius:10%;
+  margin: 2%;
+  height: 32%;
+  width: 28%;
+  background-color: gray;
+  text-align: center;
+}
+
+.outline5{
+  border-radius:10%;
+  margin: 2%;
+  height: 32%;
+  width: 28%;
+  background-color: pink;
+  text-align: center;
+}
+
+.outline6{
+  border-radius:10%;
+  margin: 2%;
+  height: 32%;
+  width: 28%;
+  background-color: rgb(250, 49, 49);
+  text-align: center;
+}
+
+
+.outline1 .main-title{
+  margin-top: 7%;
+  text-align: center;
+}
+/*ホバー時に文字を大きく*/
+.outline1 .main-title:hover {
+  -webkit-animation: zoom .3s;
+  animation: zoom .3s;
+}
+/*ホバー時に文字色変更*/
+.outline1 .main-title a:hover {
+  color: #333;
+}
+
+
+.outline2 .main-title{
+  margin-top: 7%;
+  text-align: center;
+}
+/*ホバー時に文字を大きく*/
+.outline2 .main-title:hover {
+  -webkit-animation: zoom .3s;
+  animation: zoom .3s;
+}
+/*ホバー時に文字色変更*/
+.outline2 .main-title a:hover {
+  color: #333;
+}
+
+
+.outline3 .main-title{
+  margin-top: 7%;
+  text-align: center;
+}
+/*ホバー時に文字を大きく*/
+.outline3 .main-title:hover {
+  -webkit-animation: zoom .3s;
+  animation: zoom .3s;
+}
+/*ホバー時に文字色変更*/
+.outline3 .main-title a:hover {
+  color: #333;
+}
+
+
+.outline4 .main-title{
+  margin-top: 7%;
+  text-align: center;
+}
+/*ホバー時に文字を大きく*/
+.outline4 .main-title:hover {
+  -webkit-animation: zoom .3s;
+  animation: zoom .3s;
+}
+/*ホバー時に文字色変更*/
+.outline4 .main-title a:hover {
+  color: #333;
+}
+
+
+.outline5 .main-title{
+  margin-top: 7%;
+  text-align: center;
+}
+/*ホバー時に文字を大きく*/
+.outline5 .main-title:hover {
+  -webkit-animation: zoom .3s;
+  animation: zoom .3s;
+}
+/*ホバー時に文字色変更*/
+.outline5 .main-title a:hover {
+  color: #333;
+}
+
+
+.outline6 .main-title{
+  margin-top: 7%;
+  text-align: center;
+}
+/*ホバー時に文字を大きく*/
+.outline6 .main-title:hover {
+  -webkit-animation: zoom .3s;
+  animation: zoom .3s;
+}
+/*ホバー時に文字色変更*/
+.outline6 .main-title a:hover {
+  color: #333;
+}
+
+
+.main-text img{
+  margin-top: 3%;
+  margin-bottom: 4%;
+  text-align: center;
+  height: 90%;
+  width: 90%;
+  border-radius:10%;
+}
+
+@media screen and (max-width: 700px) {
+ .main-title{
+   font-size: 14px;
+ }
+}
+
+@media screen and (max-width: 999px) {
+  .outline1{
+    width: 40%;
+  }
+
+  .outline2{
+    width: 40%;
+  }
+
+  .outline3{
+    width: 40%;
+  }
+
+  .outline4{
+    width: 40%;
+  }
+
+  .outline5{
+    width: 40%;
+  }
+
+  .outline6{
+    width: 40%;
+  }
+
+  .big-outline{
+    justify-content: center;
+  }
+ }
+
+/*--------------------------------------------------------------main END-------------------------------------------------------------------*/
